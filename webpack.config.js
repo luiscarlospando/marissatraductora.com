@@ -28,7 +28,7 @@ module.exports = {
           directory: path.join(__dirname, '/'),
         },
         compress: true,
-        port: 7777,
+        port: 7777
     },
     plugins: [
         new webpack.ProvidePlugin({

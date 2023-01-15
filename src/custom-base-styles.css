@@ -1,0 +1,39 @@
+:root {
+
+}
+
+@font-face {
+    font-family: 'adamant_bgbold_italic';
+    src: url('./assets/fonts/adamant__bg_bi-webfont.woff2') format('woff2'),
+         url('./assets/fonts/adamant__bg_bi-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'adamant_bgbold';
+    src: url('./assets/fonts/adamant_bg_b-webfont.woff2') format('woff2'),
+         url('./assets/fonts/adamant_bg_b-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'adamant_bgitalic';
+    src: url('./assets/fonts/adamant_bg_i-webfont.woff2') format('woff2'),
+         url('./assets/fonts/adamant_bg_i-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'adamant_bgregular';
+    src: url('../fonts/adamant_bg-webfont.woff2') format('woff2'),
+         url('../fonts/adamant_bg-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'adamant_bgregular', serif;
+}
