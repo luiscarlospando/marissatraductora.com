@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack serve",
     "build": "webpack --watch",
-    "tialwind": "tailwindcss -i ./src/input.css -o ./dist/assets/css/styles.css --watch"
+    "tailwind": "tailwindcss -i ./src/input.css -o ./dist/assets/css/styles.css --watch"
   },
   "repository": {
     "type": "git",
