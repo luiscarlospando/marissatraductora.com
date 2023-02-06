@@ -1,6 +1,10 @@
 /** @type {import('tailwindcss').Config} */
+const colors = require('tailwindcss/colors')
+
 module.exports = {
-    content: ["./dist/*.{html,js}"],
+    content: [
+      "./dist/*.{html,js}",
+    ],
     theme: {
       container: {
         center: true
@@ -12,15 +16,15 @@ module.exports = {
         xl: '1440px',
       },
       colors: {
-        'blue': '#1fb6ff',
-        'purple': '#7e5bef',
-        'pink': '#ff49db',
-        'orange': '#ff7849',
-        'green': '#13ce66',
-        'yellow': '#ffc82c',
-        'gray-dark': '#273444',
-        'gray': '#8492a6',
-        'gray-light': '#d3dce6',
+        transparent: 'transparent',
+        current: 'currentColor',
+        black: colors.black,
+        white: colors.white,
+        gray: colors.gray,
+        emerald: colors.emerald,
+        indigo: colors.indigo,
+        yellow: colors.yellow,
+        pink: colors.rose,
       },
       fontFamily: {
         sans: ['Graphik', 'sans-serif'],
@@ -36,5 +40,5 @@ module.exports = {
         }
       }
     },
-    plugins: [],
+    darkMode: 'class',
 }

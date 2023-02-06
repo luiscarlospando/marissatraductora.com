@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="es-MX">
+<html lang="es-MX" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,42 +8,212 @@
     <title>Marissa Gutiérrez Traductora</title>
 
     <link rel="stylesheet" href="./assets/css/styles.css">
+
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
 </head>
-<body>
+<body class="bg-white border-gray-200 py-2.5 rounded dark:bg-gray-800">
     <header>
-        <div class="container mx-auto">
-            <div class="columns-2">
-                <h1>Marissa Gutiérrez</h1>
-                <nav>
-                    <ul>
+        <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-800 fixed w-full">
+            <div class="container flex flex-wrap items-center justify-between mx-auto">
+                <a href="/" class="flex items-center">
+                    <span class="self-center text-xl font-semibold whitespace-nowrap text-gray-600 dark:text-white">Marissa Gutiérrez</span>
+                </a>
+                <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
+                    <span class="sr-only">Abrir menú principal</span>
+                    <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                    </svg>
+                </button>
+                <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                    <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-800 dark:border-gray-700">
                         <li>
-                            <a href="#">Work</a>
+                            <a href="#my-strengths" class="block py-2 pl-3 pr-4 text-white bg-pink-400 rounded md:bg-transparent md:text-pink-400 md:p-0 dark:text-white">Mis fortalezas</a>
                         </li>
                         <li>
-                            <a href="#">About Me</a>
+                            <a href="#my-experience" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-pink-400 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Experiencia</a>
                         </li>
                         <li>
-                            <a href="#">Contact</a>
+                            <a href="#education" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-pink-400 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Educación</a>
+                        </li>
+                        <li>
+                            <a href="#services" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-pink-400 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Servicios</a>
+                        </li>
+                        <li>
+                            <a href="#contact-me" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-pink-400 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contacto</a>
+                        </li>
+                        <li class="inline-block align-middle">
+                            <button id="theme-toggle" type="button" class="text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5">
+                                <svg id="theme-toggle-dark-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path></svg>
+                                <svg id="theme-toggle-light-icon" class="hidden w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z" fill-rule="evenodd" clip-rule="evenodd"></path></svg>
+                            </button>
                         </li>
                     </ul>
-                </nav>
+                </div>
             </div>
-        </div>
+        </nav>
     </header>
 
-    <section id="about-me" class="py-[60px]">
+    <section id="about-me" class="px-4 py-[60px]">
         <div class="container">
-            <div class="grid gap-4 grid-cols-2 grid-rows-1">
+            <div class="grid gap-4 lg:grid-cols-2 lg:grid-rows-1">
                 <div id="photo">
-                    <img src="./assets/images/marissa.png" alt="" class="w-100">
+                    <img src="./assets/images/marissa.png" alt="" class="w-100 grayscale hover:grayscale-0 contrast-75 drop-shadow rounded transition-all">
                 </div>
-                <div id="text">
-                    <h1>Marissa Gutiérrez</h1>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti harum odit maxime voluptate nihil, mollitia illum aut, itaque veritatis dicta labore debitis est delectus porro vero? Quisquam facilis eius fuga.</p>
+                <div id="text" class="my-auto">
+                    <h1 class="mb-5 text-4xl font-extrabold text-pink-400 dark:text-pink-400">
+                        Derribando las barreras del lenguaje y construyendo puentes entre personas.
+                    </h1>
+                    <p class="text-gray-600 dark:text-white">
+                        Hola, soy Marissa Gutiérrez. Soy una traductora de inglés y español con más de una década de experiencia. Soy una apasionada de la lingüística y del idioma inglés, el cual aprendí desde pequeña. Poseo una certificación de perito otorgada por el Gobierno del Estado de Chihuahua. Debido a mi cercanía con Estados Unidos, así como a la gran inversión industrial del estado, he tenido la oportunidad de realizar mayormente traducciones legales y técnicas. Sin embargo, he trabajado también con documentos de índole científico, artístico, académico, médico, audiovisual, financiero, entre otros.
+                    </p>
+                    <button type="button" class="text-white bg-pink-400 hover:bg-pink-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 mt-4 transition-all">
+                        Pongámonos en contacto
+                    </button>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section id="my-strengths" class="px-4 py-[60px]">
+        <div class="container">
+            <div class="grid gap-6 grid-cols-1">
+                <div>
+                    <h3 class="mb-5 text-1xl font-extrabold text-pink-400 dark:text-pink-400 md:text-1xl lg:text-2xl">Mis fortalezas</h3>
+                </div>
+            </div>
+            <div class="grid gap-6 grid-cols-1 md:grid-cols-3">
+                <div>
+                    <h2 class="text-4xl font-extrabold text-gray-600 dark:text-white mb-4">Minuciosa</h2>
+                    <p class="mb-3 font-light text-gray-600 dark:text-white">
+                        Cuido de cada detalle y reviso con detenimiento todos los proyectos.
+                    </p>
+                </div>
+                <div>
+                    <h2 class="text-4xl font-extrabold text-gray-600 dark:text-white mb-4">Analítica</h2>
+                    <p class="mb-3 font-light text-gray-600 dark:text-white">
+                        Examino el lenguaje y busco la mejor manera de expresar el mensaje con naturalidad.
+                    </p>
+                </div>
+                <div>
+                    <h2 class="text-4xl font-extrabold text-gray-600 dark:text-white mb-4">Inquisitiva</h2>
+                    <p class="mb-3 font-light text-gray-600 dark:text-white">
+                        Mi gusto por la investigación me permite proporcionar traducciones acertadas sin importar el campo.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="my-experience" class="bg-gray-100 dark:bg-gray-600 px-4 py-[60px]">
+        <div class="container">
+            <div class="grid gap-6 lg:grid-cols-2 lg:grid-rows-1">
+                <div class="my-auto">
+                    <h3 class="mb-5 text-1xl font-extrabold text-pink-400 dark:text-pink-400 md:text-1xl lg:text-2xl">Experiencia</h3>
+                    <p class="mb-3 font-light text-gray-600 dark:text-white">
+                        He trabajado con otros traductores y agencias, así como de manera independiente, en proyectos para empresas tales como:
+                    </p>
+                    <ul class="list-disc list-inside mb-3 font-light text-gray-600 dark:text-white">
+                        <li>
+                            <a class="underline decoration-2 decoration-pink-400 hover:bg-pink-400 transition-all" href="https://www.teleflex.com/la/es/index.html" target="_blank">Teleflex</a>
+                        </li>
+                        <li>
+                            <a class="underline decoration-2 decoration-pink-400 hover:bg-pink-400 transition-all" href="https://www.safran-group.com/" target="_blank">Safran</a>
+                        </li>
+                        <li>
+                            <a class="underline decoration-2 decoration-pink-400 hover:bg-pink-400 transition-all" href="https://www.sofi.com/" target="_blank">SoFi</a>
+                        </li>
+                        <li>
+                            <a class="underline decoration-2 decoration-pink-400 hover:bg-pink-400 transition-all" href="https://tecmilenio.mx/es" target="_blank">Universidad Tecmilenio</a>
+                        </li>
+                        <li>
+                            <a class="underline decoration-2 decoration-pink-400 hover:bg-pink-400 transition-all" href="https://uach.mx/" target="_blank">Universidad Autónoma de Chihuahua</a>
+                        </li>
+                        <li>
+                            <a class="underline decoration-2 decoration-pink-400 hover:bg-pink-400 transition-all" href="http://fiscalia.chihuahua.gob.mx/" target="_blank">Fiscalía General del Estado de Chihuahua</a>
+                        </li>
+                    </ul>
+                    <p class="mb-3 font-light text-gray-600 dark:text-white">
+                        Y también he proporcionado mis servicios para diferentes notarías de la ciudad de Chihuahua. 
+                    </p>
+                    <h3 id="education" class="mt-5 mb-5 text-1xl font-extrabold text-pink-400 dark:text-pink-400 md:text-1xl lg:text-2xl">Educación</h3>
+                    <ul class="list-inside mb-3 font-light text-gray-600 dark:text-white">
+                        <li class="mb-4">
+                            <h4 class="font-bold text-1xl md:text-1xl lg:text-1xl">Universidad de Estocolmo</h4>
+                            <p>Maestría en Ciencias del Lenguaje con una especialización en Lingüistica Aplicada del Inglés</p>
+                            <p>2022</p>
+                        </li>
+                        <li>
+                            <h4 class="font-bold text-1xl md:text-1xl lg:text-1xl">Universidad Autónoma de Chihuahua</h4>
+                            <p>Licenciatura en Lengua Inglesa</p>
+                            <p>2013</p>
+                        </li>
+                    </ul>
+                </div>
+                <div id="photo">
+                    <img src="./assets/images/marissa.png" alt="" class="w-100 grayscale hover:grayscale-0 contrast-75 drop-shadow rounded transition-all">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="bg-gray-100 dark:bg-gray-600 px-4 py-[60px]">
+        <div class="container">
+            <div class="grid gap-6 lg:grid-cols-1 lg:grid-rows-1">
+                <div>
+                    <h3 class="mb-5 text-1xl font-extrabold text-pink-400 dark:text-pink-400 md:text-1xl lg:text-2xl">Servicios</h3>
+                    <p class="mb-3 font-light text-gray-600 dark:text-white">
+                        He trabajado con otros traductores y agencias, así como de manera independiente, en proyectos para empresas tales como:
+                    </p>
+                    <ul class="list-disc list-inside mb-3 font-light text-gray-600 dark:text-white">
+                        <li>
+                            <a class="underline decoration-2 decoration-pink-400 hover:bg-pink-400 transition-all" href="https://www.teleflex.com/la/es/index.html" target="_blank">Teleflex</a>
+                        </li>
+                        <li>
+                            <a class="underline decoration-2 decoration-pink-400 hover:bg-pink-400 transition-all" href="https://www.safran-group.com/" target="_blank">Safran</a>
+                        </li>
+                        <li>
+                            <a class="underline decoration-2 decoration-pink-400 hover:bg-pink-400 transition-all" href="https://www.sofi.com/" target="_blank">SoFi</a>
+                        </li>
+                        <li>
+                            <a class="underline decoration-2 decoration-pink-400 hover:bg-pink-400 transition-all" href="https://tecmilenio.mx/es" target="_blank">Universidad Tecmilenio</a>
+                        </li>
+                        <li>
+                            <a class="underline decoration-2 decoration-pink-400 hover:bg-pink-400 transition-all" href="https://uach.mx/" target="_blank">Universidad Autónoma de Chihuahua</a>
+                        </li>
+                        <li>
+                            <a class="underline decoration-2 decoration-pink-400 hover:bg-pink-400 transition-all" href="http://fiscalia.chihuahua.gob.mx/" target="_blank">Fiscalía General del Estado de Chihuahua</a>
+                        </li>
+                    </ul>
+                    <p class="mb-3 font-light text-gray-600 dark:text-white">
+                        Y también he proporcionado mis servicios para diferentes notarías de la ciudad de Chihuahua. 
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact-me" class="px-4 py-[60px]">
+        <div class="container">
+            <div class="grid gap-6 lg:grid-cols-2">
+                <div>
+                    <h3 class="mb-5 text-1xl font-extrabold text-pink-400 dark:text-pink-400 md:text-1xl lg:text-2xl">¿Te interesa trabajar conmigo?</h3>
+                    <p class="mb-3 font-light text-gray-600 dark:text-white">
+                        Envíame un mensaje y en breve me pondré en contacto contigo. 😉
+                    </p>
+                </div>
+                <div>
+                    <iframe style="border:none;width:100%;" height="410px" src="https://opnform.com/forms/formulario-de-contacto"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <script src="./assets/js/app.bundle.js"></script>
 </body>
