@@ -29,11 +29,5 @@ module.exports = {
         },
         compress: true,
         port: 7777
-    },
-    plugins: [
-        new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery"
-        })
-    ]
+    }
 }
