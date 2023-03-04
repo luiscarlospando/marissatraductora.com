@@ -4,6 +4,7 @@ const colors = require('tailwindcss/colors')
 module.exports = {
     content: [
       "./dist/*.{html,js}",
+      "./node_modules/flowbite/**/*.js"
     ],
     theme: {
       container: {
@@ -41,4 +42,7 @@ module.exports = {
       }
     },
     darkMode: 'class',
+    plugins: [
+      require('flowbite/plugin')
+  ]
 }
