@@ -1,14 +1,14 @@
-const webpack = require('webpack');
-const path = require('path');
+const webpack = require("webpack");
+const path = require("path");
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
-    entry: './src/app.js',
+    entry: "./src/app.js",
     output: {
-        filename: 'app.bundle.js',
-        path: path.resolve(__dirname, 'dist/assets/js')
+        filename: "app.bundle.js",
+        path: path.resolve(__dirname, "dist/assets/js"),
     },
-    mode: 'production',
+    mode: "production",
     module: {
         rules: [
             {
@@ -17,17 +17,17 @@ module.exports = {
                 use: {
                     loader: "babel-loader",
                     options: {
-                        presets: ['@babel/preset-env']
-                    }
-                }
-            }
-        ]
+                        presets: ["@babel/preset-env"],
+                    },
+                },
+            },
+        ],
     },
     devServer: {
         static: {
-          directory: path.join(__dirname, '/'),
+            directory: path.join(__dirname, "/"),
         },
         compress: true,
-        port: 7777
-    }
-}
+        port: 3000,
+    },
+};
